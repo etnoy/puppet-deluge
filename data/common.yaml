@@ -18,3 +18,4 @@ deluge::service_ports:
   '58846': 'tcp'
   '49152-65535': 'udp'
 deluge::firewall_manage: false
+deluge::legacy_version: false
