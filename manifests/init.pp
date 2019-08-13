@@ -20,6 +20,8 @@ class deluge (
   Hash[String, String]
           $service_ports,
   Boolean $firewall_manage,
+  Optional[Boolean]
+          $legacy_version = false,
   Optional[String]
           $repo_sources   = undef,
   Optional[String]
