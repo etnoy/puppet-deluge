@@ -29,6 +29,7 @@ class deluge::service () inherits deluge {
           content => epp("${module_name}/service/upstart/${deluge::service_webui}.conf.epp",
             {
               'service_user' => $deluge::service_user,
+              'legacy_version' => $deluge::legacy_version,
             }),
           require => User[$deluge::service_user],
           notify  => [Service[$deluge::service_server], Service[$deluge::service_webui]],
