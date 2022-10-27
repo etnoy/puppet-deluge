@@ -1,5 +1,5 @@
 <%- |   String  $service_user,
-        Boolean $legacy_version,
+        String  $service_umask,
 | -%>
 [Unit]
 Description=Deluge Bittorrent Client Web Interface
@@ -12,9 +12,9 @@ Type=simple
 
 User=<%= $service_user %>
 Group=<%= $service_user %>
-UMask=027
+UMask=<%= $service_umask %>
 
-ExecStart=/usr/bin/deluge-web <%if $legacy_version == false { %> -d <% } %> -l /var/log/deluge/web.log -L warning
+ExecStart=/usr/bin/deluge-web -l /var/log/deluge/web.log -L warning
 
 Restart=on-failure
 
